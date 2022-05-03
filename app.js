@@ -1,4 +1,4 @@
-import { renderIngredients } from './utiliti'
+import { renderIngredients } from './utils'
 
 const form = document.getElementById('add-stats');
 const ingredientsList = document.getElementById('ingredient-List');
