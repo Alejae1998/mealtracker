@@ -34,7 +34,7 @@
                         </label>
                         <label>
                             Measurement:
-                            <select id="measurement">
+                            <select id="measurement" name="measurement">
                                 <option value="cups">cups</option>
                                 <option value="grams">grams</option>
                                 <option value="milliliter">milliliter</option>
@@ -42,16 +42,30 @@
                                 <option value="tablespoon">tablespoon</option>
                             </select>
                             <button id="submit">Add ingredient</button>
-                            <div class="ingredients-list">
+                        </form>
+                        <div class="ingredients-list">
                             <ul id="ingredient-List"></ul>
-                                <button id="remove">Remove last item</button>
+                            <button id="remove">Remove last item</button>
                             </div>
+                        <section id="middle">
+                            <h2>
+                                Save Meal
+                            </h2>
+                            <label>
+                                Meal:
+                                <input type="text" name="meal-name" id="meal-name" />
+                                <button id="save">save-meal</button>
+                                
+
+                            </label>
 
 
-                            
-                        </label>
-
-                    </form>
+                        </section>
+                        
+                        
+                        
+                    </label>
+                    
                 </div>
             </section>
         </main>
