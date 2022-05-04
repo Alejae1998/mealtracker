@@ -1,12 +1,16 @@
-import { renderIngredient } from './utils.js';
+import { renderIngredient, renderMeals } from './utils.js';
 
 const form = document.getElementById('add-stats');
 const ingredientsList = document.getElementById('ingredient-List');
 const remove = document.getElementById('remove');
+const mealList = document.getElementById('meal-list');
+const saveButton = document.getElementById('save-meal');
+const mealForm = document.getElementById('mealForm');
 
 // let state
 
 let ingredients = [];
+let meals = [];
 
 // set event listeners
 form.addEventListener('submit', (e) => {
@@ -23,7 +27,6 @@ form.addEventListener('submit', (e) => {
 
 function displayIngredientList() {
     ingredientsList.textContent = '';
-    console.log(ingredients);
     for (let ingredient of ingredients) {
         const li = renderIngredient(ingredient);
         ingredientsList.append(li);
@@ -35,6 +38,25 @@ remove.addEventListener('click', () => {
     displayIngredientList();
 });
 
+function displayMeals() {
+    mealList.textContent = '';
+    for (let meal of meals) {
+        const li = renderMeals(meal);
+        mealList.append(li);
+    }
+}
+
+saveButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    const formD = new FormData(mealForm);
+    const name = formD.get('meal-name');
+    let meal = {
+        ingredientCount: ingredients.length,
+        name: name,
+    };
+    meals.push(meal);
+    displayMeals();
+});
 
 // get user input
 // use user input to update state
