@@ -29,7 +29,8 @@ function displayIngredientList() {
     ingredientsList.textContent = '';
     for (let ingredient of ingredients) {
         const li = renderIngredient(ingredient);
-        ingredientsList.append(li);
+        ingredient.ingredient && ingredientsList.append(li);
+        // ingredientsList.append(li);
     }
 }
 
@@ -42,7 +43,7 @@ function displayMeals() {
     mealList.textContent = '';
     for (let meal of meals) {
         const li = renderMeals(meal);
-        mealList.append(li);
+        mealList.appendChild(li);
     }
 }
 
